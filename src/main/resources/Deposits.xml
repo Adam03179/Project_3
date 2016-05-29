@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bank xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Deposits.xsd">
+    <deposit id="a123">
+        <name>Horns and hooves</name>
+        <country>Ukraine</country>
+        <type>Saving</type>
+        <depositor>
+            <sex>Male</sex>
+            <age>30</age>
+            <first_name>Andrey</first_name>
+            <last_name>Andreev</last_name>
+        </depositor>
+        <account_id>2620321478</account_id>
+        <amount_on_deposit>
+            <dollars_USA>100</dollars_USA>
+            <hrivnas>3222</hrivnas>
+        </amount_on_deposit>
+        <profitability>20</profitability>
+        <time_constraints>
+            <days>365</days>
+        </time_constraints>
+    </deposit>
+    <deposit id="b456">
+        <name>Not real</name>
+        <country>Ukraine</country>
+        <type>Cumulative</type>
+        <depositor>
+            <sex>Male</sex>
+            <age>18</age>
+            <first_name>Bob</first_name>
+            <last_name>Jackson</last_name>
+        </depositor>
+        <account_id>26203547445014</account_id>
+        <amount_on_deposit>
+            <dollars_USA>325</dollars_USA>
+            <hrivnas>587</hrivnas>
+        </amount_on_deposit>
+        <profitability>15</profitability>
+        <time_constraints>
+            <days>1125</days>
+        </time_constraints>
+    </deposit>
+    <deposit id="c789">
+        <name>Roulette</name>
+        <country>Canada</country>
+        <type>immediate</type>
+        <depositor>
+            <sex>Female</sex>
+            <age>55</age>
+            <first_name>Anna</first_name>
+            <last_name>Bobkins</last_name>
+        </depositor>
+        <account_id>2620557855683</account_id>
+        <amount_on_deposit>
+            <dollars_USA>336</dollars_USA>
+            <hrivnas>10000</hrivnas>
+        </amount_on_deposit>
+        <profitability>5</profitability>
+        <time_constraints>
+            <days>325</days>
+        </time_constraints>
+    </deposit>
+    <deposit id="d011">
+        <name>Horns and hooves</name>
+        <country>USA</country>
+        <type>Saving</type>
+        <depositor>
+            <sex>Female</sex>
+            <age>45</age>
+            <first_name>Suzan</first_name>
+            <last_name>Markez</last_name>
+        </depositor>
+        <account_id>262024654654</account_id>
+        <amount_on_deposit>
+            <dollars_USA>3548</dollars_USA>
+            <hrivnas>54657</hrivnas>
+        </amount_on_deposit>
+        <profitability>20</profitability>
+        <time_constraints>
+            <days>789</days>
+        </time_constraints>
+    </deposit>
+</bank>
