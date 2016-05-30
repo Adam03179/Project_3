@@ -9,7 +9,6 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args){
-
         try {
             SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
             SAXParser saxParser = saxParserFactory.newSAXParser();

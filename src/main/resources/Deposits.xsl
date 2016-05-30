@@ -23,7 +23,7 @@
                     <xsl:for-each select="bank/deposit">
                         <tr>
                             <td>
-                                <xsl:value-of select="deposit"/>
+                                <xsl:value-of select="@id"/>
                             </td>
                             <td>
                                 <xsl:value-of select="name"/>
