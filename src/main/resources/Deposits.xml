@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bank xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Deposits.xsd">
+<bank xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemalocation="http://www.deposits.com Deposits.xsd"
+      xmlns:testSpace="http://www.testSpace.com">
     <deposit id="a123">
         <name>Horns and hooves</name>
         <country>Ukraine</country>
@@ -12,8 +14,8 @@
         </depositor>
         <account_id>2620321478</account_id>
         <amount_on_deposit>
-            <dollars_USA>100</dollars_USA>
-            <hrivnas>3222</hrivnas>
+            <testSpace:dollars_USA>100</testSpace:dollars_USA>
+            <testSpace:hrivnas>3222</testSpace:hrivnas>
         </amount_on_deposit>
         <profitability>20</profitability>
         <time_constraints>

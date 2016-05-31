@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:testSpace="http://www.testSpace.com"
+                version="1.0">
     <xsl:template match="/">
         <html>
             <body>
@@ -50,10 +52,10 @@
                                 <xsl:value-of select="account_id"/>
                             </td>
                             <td>
-                                <xsl:value-of select="amount_on_deposit/dollars_USA"/>
+                                <xsl:value-of select="amount_on_deposit/testSpace:dollars_USA"/>
                             </td>
                             <td>
-                                <xsl:value-of select="amount_on_deposit/hrivnas"/>
+                                <xsl:value-of select="amount_on_deposit/testSpace:hrivnas"/>
                             </td>
                             <td>
                                 <xsl:value-of select="profitability"/>

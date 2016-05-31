@@ -1,6 +1,5 @@
 package main.java.parser_dom;
 
-import main.java.parser_sax.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -24,9 +23,6 @@ public class DOMPars {
         f.setValidating(false);
         DocumentBuilder builder = f.newDocumentBuilder();
         Document doc = builder.parse(new File("src\\main\\resources\\Deposits.xml"));
-
-
-        String titleEl = doc.getDocumentElement().getNodeName();
 
         NodeList nodeList1 = doc.getElementsByTagName("deposit");
         NodeList nodeList2 = doc.getElementsByTagName("depositor");
