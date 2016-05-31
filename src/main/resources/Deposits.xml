@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bank xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemalocation="http://www.deposits.com Deposits.xsd"
+<bank xmlns="http://www.deposits.com"
       xmlns:testSpace="http://www.testSpace.com">
     <deposit id="a123">
         <name>Horns and hooves</name>
@@ -34,8 +33,8 @@
         </depositor>
         <account_id>26203547445014</account_id>
         <amount_on_deposit>
-            <dollars_USA>325</dollars_USA>
-            <hrivnas>587</hrivnas>
+            <testSpace:dollars_USA>325</testSpace:dollars_USA>
+            <testSpace:hrivnas>587</testSpace:hrivnas>
         </amount_on_deposit>
         <profitability>15</profitability>
         <time_constraints>
@@ -54,8 +53,8 @@
         </depositor>
         <account_id>2620557855683</account_id>
         <amount_on_deposit>
-            <dollars_USA>336</dollars_USA>
-            <hrivnas>10000</hrivnas>
+            <testSpace:dollars_USA>336</testSpace:dollars_USA>
+            <testSpace:hrivnas>10000</testSpace:hrivnas>
         </amount_on_deposit>
         <profitability>5</profitability>
         <time_constraints>
@@ -74,8 +73,8 @@
         </depositor>
         <account_id>262024654654</account_id>
         <amount_on_deposit>
-            <dollars_USA>3548</dollars_USA>
-            <hrivnas>54657</hrivnas>
+            <testSpace:dollars_USA>3548</testSpace:dollars_USA>
+            <testSpace:hrivnas>54657</testSpace:hrivnas>
         </amount_on_deposit>
         <profitability>20</profitability>
         <time_constraints>

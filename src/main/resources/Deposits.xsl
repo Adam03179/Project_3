@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:testSpace="http://www.testSpace.com"
-                version="1.0">
+<xsl:stylesheet
+        xmlns="http://www.deposits.com"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:testSpace="http://www.testSpace.com"
+        version="1.0">
     <xsl:template match="/">
         <html>
             <body>
                 <h1>Bank</h1>
                 <table border="1">
-                    <tr>
+                    <tr bgcolor="yellow">
                         <th>Deposit</th>
                         <th>Name</th>
                         <th>Country</th>

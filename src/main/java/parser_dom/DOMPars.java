@@ -64,10 +64,8 @@ public class DOMPars {
 
                 Element element3 = (Element) nodeList3.item(k);
 
-                    hrivnas = Integer.parseInt(element3.getElementsByTagName("hrivnas").item(0).getChildNodes().item(0).getNodeValue());
-                    dollars = Integer.parseInt(element3.getElementsByTagName("dollars_USA").item(0).getChildNodes().item(0).getNodeValue());
-
-
+                    hrivnas = Integer.parseInt(element3.getElementsByTagName("testSpace:hrivnas").item(0).getChildNodes().item(0).getNodeValue());
+                    dollars = Integer.parseInt(element3.getElementsByTagName("testSpace:dollars_USA").item(0).getChildNodes().item(0).getNodeValue());
 
             }
 
