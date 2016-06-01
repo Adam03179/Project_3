@@ -70,11 +70,11 @@ public class SAXPars extends DefaultHandler {
             deposit.setAccount(new Long(new String(ch, start, length)));
         }
 
-        if (thisElement.equals("dollars_USA")) {
+        if (thisElement.equals("testSpace:dollars_USA")) {
             deposit.amountOnDeposit.setDollars(new Integer(new String(ch, start, length)));
         }
 
-        if (thisElement.equals("hrivnas")) {
+        if (thisElement.equals("testSpace:hrivnas")) {
             deposit.amountOnDeposit.setHrivnas(new Integer(new String(ch, start, length)));
         }
 
