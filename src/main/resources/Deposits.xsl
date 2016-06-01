@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet
+<xsl:stylesheet version="2.0"
         xmlns="http://www.deposits.com"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:testSpace="http://www.testSpace.com"
-        version="1.0">
+        exclude-result-prefixes="testSpace">
     <xsl:template match="/">
         <html>
             <body>
