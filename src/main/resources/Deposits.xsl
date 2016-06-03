@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0"
+<xsl:stylesheet version="3.0"
         xmlns="http://www.deposits.com"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        xmlns:testSpace="http://www.testSpace.com"
-        exclude-result-prefixes="testSpace">
+        xmlns:testSpace="http://www.testSpace.com">
     <xsl:template match="/">
         <html>
             <body>
                 <h1>Bank</h1>
-                <table border="1">
-                    <tr bgcolor="yellow">
+                <table border="4px groove black">
+                    <tr bgcolor="#CCCCCC">
                         <th>Deposit</th>
                         <th>Name</th>
                         <th>Country</th>
@@ -26,43 +26,43 @@
                     </tr>
                     <xsl:for-each select="bank/deposit">
                         <tr>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="@id"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="name"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="country"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="type"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="depositor/sex"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="depositor/age"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="depositor/first_name"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="depositor/last_name"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="account_id"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="amount_on_deposit/testSpace:dollars_USA"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="amount_on_deposit/testSpace:hrivnas"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="profitability"/>
                             </td>
-                            <td>
+                            <td bgcolor="#F5F5F5">
                                 <xsl:value-of select="time_constraints/days"/>
                             </td>
                         </tr>

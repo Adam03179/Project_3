@@ -13,7 +13,7 @@ import java.io.*;
 public class MyValidator {
 
     public static void main(String[] args) throws FileNotFoundException {
-        validate(new File("src\\main\\resources\\Deposits.xml"),new FileInputStream(new File("src\\main\\resources\\Deposits.xsd")));
+        validate(new File("src\\main\\resources\\Deposits.xml"), new FileInputStream(new File("src\\main\\resources\\Deposits.xsd")));
     }
 
     public static void validate(File xml, InputStream xsd) {

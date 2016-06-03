@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bank xmlns="http://www.deposits.com"
+<bank xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.deposits.com"
+      xsi:schemaLocation="http://www.deposits.com Deposits.xsd"
       xmlns:testSpace="http://www.testSpace.com">
     <deposit id="a123">
         <name>Horns and hooves</name>

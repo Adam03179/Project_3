@@ -16,7 +16,7 @@ public class IntoHTML {
             TransformerFactory tFactory = TransformerFactory.newInstance();
 
             Source xslDoc = new StreamSource("src\\main\\resources\\Deposits.xsl");
-            Source xmlDoc = new StreamSource("src\\main\\resources\\Deposits.xml");
+            Source xmlDoc = new StreamSource("src\\main\\Depositsw.xml");
 
             String outputFileName = "src\\main\\resources\\Deposit.html";
 
