@@ -11,12 +11,14 @@ public class IntoHTML {
 
 
     public static void main(String[] args) {
+        String xmlPath = "src\\main\\resources\\Deposits.xml";
+        String xslPath = "src\\main\\resources\\Deposits.xsl";
 
         try {
             TransformerFactory tFactory = TransformerFactory.newInstance();
 
-            Source xslDoc = new StreamSource("src\\main\\resources\\Deposits.xsl");
-            Source xmlDoc = new StreamSource("src\\main\\Depositsw.xml");
+            Source xslDoc = new StreamSource(xslPath);
+            Source xmlDoc = new StreamSource(xmlPath);
 
             String outputFileName = "src\\main\\resources\\Deposit.html";
 
@@ -24,15 +26,13 @@ public class IntoHTML {
             Transformer trasform = tFactory.newTransformer(xslDoc);
             trasform.transform(xmlDoc, new StreamResult(htmlFile));
 
-            System.out.println("Transformation your xsl to html file completed successfully!");
-            System.out.println("You can find your html file in the next directory " + outputFileName);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (TransformerConfigurationException e) {
-            e.printStackTrace();
-        } catch (TransformerFactoryConfigurationError e) {
-            e.printStackTrace();
-        } catch (TransformerException e) {
+            System.out.println("Transformation your xsl to html file " +
+                    "completed successfully!");
+            System.out.println("You can find your html file in the" +
+                    " next directory " + outputFileName);
+
+        } catch (FileNotFoundException | TransformerFactoryConfigurationError
+                | TransformerException e) {
             e.printStackTrace();
         }
 

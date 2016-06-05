@@ -1,24 +1,52 @@
 package main.java.parserStAX;
 
+import main.java.parser_sax.SAXPars;
+import org.xml.sax.SAXException;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StAXPars {
 
-    public static void main(String[] args) throws XMLStreamException, FileNotFoundException {
+    private static SAXParserFactory saxParserFactory
+            = SAXParserFactory.newInstance();
+
+    public static void main(String[] args) throws XMLStreamException,
+            FileNotFoundException {
+        String xmlPath = "src\\main\\resources\\Deposits.xml";
+
+        try {
+
+            String constant = XMLConstants.W3C_XML_SCHEMA_NS_URI;
+            SchemaFactory xsdFactory = SchemaFactory.newInstance(constant);
+            Schema schema = xsdFactory.newSchema();
+
+            if (!validate(xmlPath, schema)) {
+                throw new SAXException("XML is not valid");
+            }
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
 
         List<Deposit> list = null;
         Deposit currDep = null;
         String tagContent = null;
         XMLInputFactory factory = XMLInputFactory.newInstance();
         XMLStreamReader reader = factory.createXMLStreamReader(
-                new FileInputStream("src\\main\\resources\\Deposits.xml"));
+                new FileInputStream(xmlPath));
 
         while (reader.hasNext()) {
             int event = reader.next();
@@ -55,7 +83,8 @@ public class StAXPars {
                             currDep.depositor.setSex(tagContent);
                             break;
                         case "age":
-                            currDep.depositor.setAge(Byte.parseByte(tagContent));
+                            currDep.depositor.setAge
+                                    (Byte.parseByte(tagContent));
                             break;
                         case "first_name":
                             currDep.depositor.setFirstName(tagContent);
@@ -67,16 +96,20 @@ public class StAXPars {
                             currDep.setAccount(Long.parseLong(tagContent));
                             break;
                         case "dollars_USA":
-                            currDep.amountOnDeposit.setDollars(Integer.parseInt(tagContent));
+                            currDep.amountOnDeposit.setDollars
+                                    (Integer.parseInt(tagContent));
                             break;
                         case "hrivnas":
-                            currDep.amountOnDeposit.setHrivnas(Integer.parseInt(tagContent));
+                            currDep.amountOnDeposit.setHrivnas
+                                    (Integer.parseInt(tagContent));
                             break;
                         case "profitability":
-                            currDep.setProfitability(Double.parseDouble(tagContent));
+                            currDep.setProfitability
+                                    (Double.parseDouble(tagContent));
                             break;
                         case "days":
-                            currDep.timeConstraints.setDays(Integer.parseInt(tagContent));
+                            currDep.timeConstraints.setDays
+                                    (Integer.parseInt(tagContent));
                             break;
                     }
                     break;
@@ -94,5 +127,28 @@ public class StAXPars {
         }
 
 
+    }
+
+    public static boolean validate(String xmlFileName, Schema schema) {
+        SAXParser parser;
+        SAXPars handler;
+
+        try {
+            saxParserFactory.setSchema(schema);
+            saxParserFactory.setNamespaceAware(true);
+
+            parser = saxParserFactory.newSAXParser();
+            handler = new SAXPars();
+
+            parser.parse(xmlFileName, handler);
+
+            return handler.isValid();
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            System.out.println("XML is not valid");
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }

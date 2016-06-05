@@ -11,7 +11,19 @@ public class SAXPars extends DefaultHandler {
     private String thisElement;
     public List<Deposit> list = new ArrayList<>();
     private Deposit deposit = new Deposit();
+    private boolean isValid;
 
+    public SAXPars() {
+        isValid = true;
+    }
+
+    public boolean isValid() {
+        return isValid;
+    }
+
+    public void setIsValid(boolean isValid) {
+        this.isValid = isValid;
+    }
 
     public Deposit getResult() {
         return deposit;
@@ -25,7 +37,8 @@ public class SAXPars extends DefaultHandler {
 
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName,
+                             Attributes attributes) throws SAXException {
 
         thisElement = qName;
 
@@ -36,7 +49,8 @@ public class SAXPars extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length)
+            throws SAXException {
 
         if (thisElement.equals("name")) {
             deposit.setName(new String(ch, start, length));
@@ -71,26 +85,31 @@ public class SAXPars extends DefaultHandler {
         }
 
         if (thisElement.equals("testSpace:dollars_USA")) {
-            deposit.amountOnDeposit.setDollars(new Integer(new String(ch, start, length)));
+            deposit.amountOnDeposit.setDollars(new Integer
+                    (new String(ch, start, length)));
         }
 
         if (thisElement.equals("testSpace:hrivnas")) {
-            deposit.amountOnDeposit.setHrivnas(new Integer(new String(ch, start, length)));
+            deposit.amountOnDeposit.setHrivnas(new Integer(
+                    new String (ch, start, length)));
         }
 
         if (thisElement.equals("profitability")) {
-            deposit.setProfitability(new Double(new String(ch, start, length)));
+            deposit.setProfitability(new Double(
+                    new String (ch, start, length)));
         }
 
         if (thisElement.equals("days")) {
-            deposit.timeConstraints.setDays(new Integer(new String(ch, start, length)));
+            deposit.timeConstraints.setDays(new Integer(
+                    new String(ch, start, length)));
         }
 
 
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName)
+            throws SAXException {
         thisElement = "";
 
         if (qName.equals("deposit")) {
